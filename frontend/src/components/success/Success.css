@@ -1,0 +1,73 @@
+.success-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+  
+  .success-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .success-checkmark-wrapper {
+    background-color: white;
+    border-radius: 9999px;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  .success-checkmark-inner {
+    position: relative;
+  }
+  
+  .success-spinning-circle {
+    position: absolute;
+    inset: 0;
+    background-color: #22c55e;
+    border-radius: 9999px;
+    opacity: 0.2;
+  }
+  
+  .success-checkmark {
+    background-color: #22c55e;
+    border-radius: 9999px;
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .success-checkmark-icon {
+    width: 4rem;
+    height: 4rem;
+    color: white;
+  }
+  
+  .success-message {
+    margin-top: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .success-message-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  
+  .success-message-text {
+    color: #e5e7eb;
+  }

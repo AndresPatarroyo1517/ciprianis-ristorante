@@ -1,0 +1,118 @@
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --green-100: #dcfce7;
+    --green-800: #166534;
+    --red-100: #fee2e2;
+    --red-800: #991b1b;
+    --yellow-100: #fef3c7;
+    --yellow-800: #92400e;
+    --soft-beige: #e8e0cd; 
+    --soft-gray: #d1d5db;
+    --dark-gray: #4b5563;
+    --muted-text: #6b7280;
+}
+
+.calendar-container {
+    background: var(--soft-beige);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    max-width: 100%;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.calendar-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--dark-gray);
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+.date-picker {
+    padding: 0.75rem;
+    border: 1px solid var(--soft-gray);
+    border-radius: 0.5rem;
+    min-width: 220px;
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+.tables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.table-card {
+    border: 1px solid var(--soft-gray);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.table-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--dark-gray);
+}
+
+.reservation-item {
+    border: 1px solid var(--soft-gray);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    background-color: var(--soft-beige);
+}
+
+.reservation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.status-pending {
+    background-color: var(--yellow-100);
+    color: var(--yellow-800);
+}
+
+.status-confirmed {
+    background-color: var(--green-100);
+    color: var(--green-800);
+}
+
+.status-cancelled {
+    background-color: var(--red-100);
+    color: var(--red-800);
+}
+
+.reservation-details {
+    font-size: 0.9rem;
+    color: var(--muted-text);
+}

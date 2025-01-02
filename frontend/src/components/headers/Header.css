@@ -1,0 +1,91 @@
+.text-dark {
+    color: black;
+}
+
+.contenedor-navbar {
+    padding: 0px 10px 0px 20px;
+}
+
+@media(max-width: 1300px) {
+    .navbar-ul-nav {
+        padding-left: 0px;
+    }
+}
+.user_option .order_online {
+    background-color:#d2c4a5;
+    color: black;
+}
+.userProfileContainer {
+    position: relative; 
+    display: flex;
+    justify-content: flex-end; 
+    padding: 10px; 
+    z-index: 100;
+  }
+
+  .userProfileWrapper {
+    position: relative;
+  }  
+  
+  .profileDropdown {
+    position: absolute;
+    top: 100%; 
+    z-index: 10; 
+  }
+
+  .navbar {
+    padding: 0.5rem 1rem;
+}
+
+.navbar .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el contenedor de usuario y carrito */
+.user_option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userProfileWrapper,
+.cart_link {
+    margin: 0 10px;
+}
+
+/* Centrado de los iconos de usuario y carrito en pantallas pequeñas */
+@media (max-width: 768px) {
+    .user_option {
+        justify-content: center; 
+        width: 100%;
+    }
+
+    .navbar .navbar-nav {
+        width: 100%;
+        justify-content: center; 
+        margin-bottom: 0.5rem;
+    }
+
+    .order_online {
+        display: block;
+        justify-content: end;
+    }
+
+    .navbar-toggler {
+        margin-left: auto; 
+    }
+
+    .navbar-collapse {
+        width: 100%; 
+    }
+    .navbar-nav li {
+        text-align: center;
+        width: 100%; 
+    }
+
+    .navbar-nav li a {
+        padding: 1rem;
+    }
+}

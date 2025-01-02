@@ -1,0 +1,16 @@
+.active-orders {
+    margin-bottom: 1.5rem;
+  }
+  
+  .active-orders-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+  
+  .active-orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }

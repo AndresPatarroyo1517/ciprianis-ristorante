@@ -1,0 +1,35 @@
+:root {
+    --primary-color: #ffbe33;
+    --secondary-color: #8c7355;
+    --primary-light: #ffd780;
+    --secondary-light: #a48f77;
+    --text-primary: #2c2c2c;
+    --text-secondary: var(--secondary-color);
+    --text-light: #6c6c6c;
+    --bg-primary: #ffffff;
+    --bg-secondary: #faf7f4;
+    --bg-accent: #fff8eb;
+    --status-confirmed-bg: #ebfbf0;
+    --status-confirmed-text: var(--primary-color);
+    --status-pending-bg: #fff9e6;
+    --status-pending-text: var(--primary-color);
+    --status-completed-bg: #f4f8ff;
+    --status-completed-text: var(--secondary-color);
+    --status-cancelled-bg: #fff4f4;
+    --status-cancelled-text: #e74c3c;
+    --shadow-sm: 0 2px 4px rgba(140, 115, 85, 0.1);
+    --shadow-md: 0 4px 6px rgba(140, 115, 85, 0.15);
+    --shadow-lg: 0 8px 15px rgba(140, 115, 85, 0.2);
+    --border-radius: 12px;
+    --transition: 0.3s ease;
+    --primary-beige: #ffbe33;
+    --primary-dark: #8c7355;
+    --primary-light: #e8e0cd;
+    --accent-brown: #5c4934;
+    --text-dark: #2c2418;
+    --text-light: #f5f2ec;
+    --error-red: #a94442;
+    --error-light: #f2dede;
+    --success-green: #3c763d;
+    --border-color: #e8e0cd;
+  }
