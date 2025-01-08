@@ -17,6 +17,7 @@ export function ReservationList() {
     const fetchReservations = async () => {
         try {
             const reserv = await getAllReserv()
+            console.log(reserv)
             setReservations(reserv)
             setLoading(false)
         } catch (e) {

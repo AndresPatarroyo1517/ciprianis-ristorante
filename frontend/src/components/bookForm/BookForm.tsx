@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ReservationFormData} from "../../types/const"
+import { ReservationFormData } from "../../types/const"
 import { postBook } from "../../services/bookService"
 import { useAuth } from "../../hooks/auth/useAuth"
 import { Link } from "react-router-dom"
@@ -7,7 +7,7 @@ import './BookForm.css'
 
 export function BookForm() {
   const [isHiding, setIsHiding] = useState(false)
-  const isLogged = useAuth()
+  const { isLogged } = useAuth()
   const [formData, setFormData] = useState<ReservationFormData>({
     numOfPersons: 1,
     table: 1,
@@ -35,42 +35,42 @@ export function BookForm() {
 
   const calculateTimeLimits = (startHour: string) => {
     if (!startHour) return { minTime: '10:00', maxTime: '20:00' }
-  
+
     const [hours, minutes] = startHour.split(':').map(Number)
     const startDate = new Date()
     startDate.setHours(hours, minutes, 0)
-  
+
     const minDate = new Date(startDate)
     minDate.setHours(minDate.getHours() + 1)
-  
+
     const maxDate = new Date(startDate);
     maxDate.setHours(maxDate.getHours() + 2)
-  
+
     const formatTime = (date: Date) =>
       `${date.getHours().toString().padStart(2, '0')}:${date
         .getMinutes()
         .toString()
         .padStart(2, '0')}`;
-  
+
     return {
       minTime: formatTime(minDate),
       maxTime: formatTime(maxDate),
     }
   }
-  
+
   const handleStartHourChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const startHour = e.target.value
     setFormData({ ...formData, startHour, endHour: '' })
-  
+
     const { minTime, maxTime } = calculateTimeLimits(startHour)
-  
+
     const endHourInput = document.getElementById('endHour') as HTMLInputElement
     if (endHourInput) {
       endHourInput.min = minTime
       endHourInput.max = maxTime
     }
   }
-  
+
   const handleEndHourChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const endHour = e.target.value
     if (formData.startHour && endHour) {
@@ -80,13 +80,13 @@ export function BookForm() {
       startTime.setHours(startHours, startMinutes, 0)
       const endTime = new Date()
       endTime.setHours(endHours, endMinutes, 0)
-  
+
       if (endTime <= startTime) {
         setError('La hora de fin debe ser después de la hora de inicio')
         return
       }
     }
-  
+
     setFormData({ ...formData, endHour })
   }
 
@@ -94,7 +94,7 @@ export function BookForm() {
     e.preventDefault()
 
     try {
-      if (!formData.startHour ) {
+      if (!formData.startHour) {
         throw new Error('Por favor selecciona una hora de inicio')
       }
       await postBook(formData)
@@ -189,7 +189,7 @@ export function BookForm() {
         <br />
         <small>Última reservación: 21:00</small>
       </div>
-      {!isLogged ? <button type="submit" className="submit-button">
+      {isLogged ? <button type="submit" className="submit-button">
         Crear Reservación
       </button> : <Link to='/login'><button type="button" className="submit-button">Iniciar Sesión</button></Link>}
     </form>

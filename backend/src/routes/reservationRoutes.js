@@ -9,7 +9,7 @@ router.post('/', verifyLogin, ReservController.insertMyReserv)
 router.get('/my', cache, verifyLogin, ReservController.getMyReserv)
 router.get('/all', cache, isAdmin, ReservController.getAllReserv)
 router.get('/find', verifyLogin, ReservController.getReservationsByDate)
-router.put('put/:id', verifyLogin, ReservController.updateMyReserv)
-router.delete('delete/:id', verifyLogin, ReservController.deleteMyReserv)
+router.patch('/patch/:id', verifyLogin, ReservController.updateMyReserv)
+router.delete('/delete/:id', verifyLogin, ReservController.deleteMyReserv)
 
 export default router

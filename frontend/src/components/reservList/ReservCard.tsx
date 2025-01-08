@@ -84,7 +84,7 @@ export const ReservCard: React.FC<ReservCardProps> = ({ user, reserv, onStatusCh
                 <div className="time-info">
                     <i className="fas fa-clock"></i>
                     <span>
-                        {reserv.startHour.toLocaleTimeString()} - {reserv.endHour.toLocaleTimeString()}
+                        {new Date(reserv.startHour).toLocaleTimeString()} - {new Date(reserv.endHour).toLocaleTimeString()}
                     </span>
                 </div>
             </div>

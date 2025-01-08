@@ -51,7 +51,7 @@ export const getAllReserv = async () => {
         throw new Error(data.message)
     }
     const data = await response.json()
-    return data
+    return data.data
 }
 
 export const deleteReserv = async (id: string) => {

@@ -6,6 +6,7 @@ import { useAuth } from "../../hooks/auth/useAuth"
 
 export function Book() {
     const isLogged = useAuth()
+    
     return (
         <section className="book_section">
             <div className="book_container">
@@ -18,7 +19,7 @@ export function Book() {
                     <div className="book_form_container">
                         <BookForm />
                     </div>
-                    {isLogged ? (
+                    {!isLogged ? (
                         <div className="book_image_container">
                             <img src={bookImage} alt="Imagen de reservación" className="book_image"/>
                         </div>

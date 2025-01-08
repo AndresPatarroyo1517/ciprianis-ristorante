@@ -48,7 +48,7 @@ export function ProfilePanel({ onClose }: ProfilePanelProps) {
           <p className="profilePanel__email">{user.email}</p>
         </div>
         <div className="profilePanel__actions">
-          <Link to="/myReservation" className="profilePanel__actionButton">Ver Reservas</Link>
+          <Link to="/myreserv" className="profilePanel__actionButton">Ver Reservas</Link>
         </div>
       </div>
     </div>
