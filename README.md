@@ -78,7 +78,7 @@ Algunas de las funcionalidades principales que este proyecto ofrece:
 ```bash
    npm start
 ```
-Por defecto escuchará en http://localhost:PORT (el puerto que hayas configurado, por ejemplo 5000).
+Por defecto escuchará en http://localhost:PORT (El puerto se pondra con las demas variables de entorno en un .env especifico).
 
 
 Frontend
