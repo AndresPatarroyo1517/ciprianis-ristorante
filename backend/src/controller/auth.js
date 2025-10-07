@@ -21,7 +21,7 @@ const schemaLoginValidation = z.object({
 
 const validateExist = async (username, email) => {
   const userExist = await User.findOne({ username })
-  const emailExist = await User.findOne({ email })
+  const emailExist = await User.findOne({ email: { $eq: email } })
   if (emailExist) {
     throw new Error('El correo electrónico ya está en uso.')
   }
