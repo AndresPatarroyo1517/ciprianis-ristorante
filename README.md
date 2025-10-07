@@ -56,8 +56,8 @@ Algunas de las funcionalidades principales que este proyecto ofrece:
 
 - **Frontend**  
   • React (con hooks, rutas, estado local o contexto)  
-  • Axios o Fetch para interacción con la API  
-  • CSS / Styled Components / Bootstrap / Tailwind (lo que hayas usado)  
+  • Fetch para interacción con la API  
+  • CSS / Styled Components / Bootstrap 
 
 ---
 
