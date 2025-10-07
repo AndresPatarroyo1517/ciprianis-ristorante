@@ -20,7 +20,7 @@ const schemaLoginValidation = z.object({
 })
 
 const validateExist = async (username, email) => {
-  const userExist = await User.findOne({ username })
+  const userExist = await User.findOne({ username: { $eq: username } })
   const emailExist = await User.findOne({ email: { $eq: email } })
   if (emailExist) {
     throw new Error('El correo electrónico ya está en uso.')
@@ -80,7 +80,7 @@ export class AuthController {
     try {
       schemaLoginValidation.parse(req.body)
       const { username, password, stayLoggedIn } = req.body
-      const user = await User.findOne({ username })
+      const user = await User.findOne({ username: { $eq: username } })
       if (!user) throw new Error('El usuario no existe.')
       const validPassword = await bcrypt.compare(password, user.password)
       if (!validPassword) throw new Error('La contraseña es incorrecta.')

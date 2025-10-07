@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
+import lusca from 'lusca'
 import authRoutes from './src/routes/authRoutes.js'
 import dishRoutes from './src/routes/dishRoutes.js'
 import orderRoutes from './src/routes/orderRoutes.js'
@@ -14,6 +15,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
+app.use(lusca.csrf())
 app.use(cors({
   origin: (origin, callback) => {
     if (process.env.ACCEPTED_ORIGINS.includes(origin)) {

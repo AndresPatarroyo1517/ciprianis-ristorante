@@ -55,13 +55,22 @@ export class DishController {
       const { id } = req.params
       const patch = req.body
 
-      if (Object.keys(patch).length === 0) {
-        return res.status(400).json({ message: 'No hay campos para cambiar.' })
+      // Only allow specific fields to be updated
+      const allowedFields = ['name', 'description', 'price', 'category', 'ingredients', 'image'];
+      const sanitizedPatch = {};
+      for (const key of Object.keys(patch)) {
+        if (allowedFields.includes(key) && !key.startsWith('$')) {
+          sanitizedPatch[key] = patch[key];
+        }
+      }
+
+      if (Object.keys(sanitizedPatch).length === 0) {
+        return res.status(400).json({ message: 'No hay campos válidos para cambiar.' });
       }
 
       const result = await Dish.updateOne(
         { _id: id },
-        { $set: patch }
+        { $set: sanitizedPatch }
       )
       if (result.nModified === 0) {
         return res.status(404).json({ message: 'No se encontraron platos con el ID proporcionado o no se han hecho modificaciones.' })
