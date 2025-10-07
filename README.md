@@ -40,8 +40,8 @@ Algunas de las funcionalidades principales que este proyecto ofrece:
 - API REST que gestiona órdenes, estado de órdenes (pendiente, en preparación, completada).  
 - Validaciones de datos al backend (campos obligatorios, formatos).  
 - Manejo de errores y respuestas HTTP con códigos adecuados (400, 404, 500, etc.).  
-- Comunicación frontend → backend usando fetch / axios.  
-- Rutas protegidas para administración (simulación de autenticación básica, si la implementaste).  
+- Comunicación frontend → backend usando fetch.
+- Rutas protegidas para administración.  
 
 *No incluye*: integración real con pasarelas de pago, procesamiento de pagos, manejo de tarjetas.
 
